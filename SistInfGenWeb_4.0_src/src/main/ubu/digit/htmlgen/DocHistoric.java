@@ -22,12 +22,13 @@ import ubu.digit.util.ExternalProperties;
  * HistoricSist.html a partir de información en fichero externo al que se accede
  * por odbc.
  * <p>
- * Dependencias sobre recursos web: ./css/ubuSisInf.css ./js/sorttable.js
+ * Dependencias sobre recursos web: ./css/materialize.min.css, ./css/style.css y
+ * ./js/sorttable.js
  * <p>
  * Dependencias sobtre los datos Historico(Titulo,Descripcion,Tutor1
  * ,Tutor2,Tutor3,Alumno1,Alumno2,Alumno3,FechaAsignacion
  * ,FechaPresentacion,Nota,TotalDias)
- * 
+ *
  * @author Carlos López Nozal
  * @author Beatriz Zurera Martínez-Acitores
  * @since 0.5
@@ -100,8 +101,9 @@ public class DocHistoric extends DocSistInfHtml {
      * Genera el fichero HistoricSist.html a partir de los datos en un fichero
      * externo.
      * <p>
-     * Dependencias sobre ./css/ubuSisInf.css, ./js/sorttable.js
-     * 
+     * Dependencias sobre recursos web: ./css/materialize.min.css, ./css/style.css y
+     * ./js/sorttable.js
+     *
      */
     @Override
     public void generate(int level) throws FileNotFoundException, SQLException {
@@ -144,8 +146,8 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Genera el código html correspondiente a la tabla estadística.
      * <p>
-     * Dependencias sobre ./css/ubuSisInf.css
-     * 
+     * Dependencias sobre ./css/materialize.min.css y ./css/style.css
+     *
      * @param title
      *            Título de la tabla.
      * @throws SQLException
@@ -213,8 +215,8 @@ public class DocHistoric extends DocSistInfHtml {
      * Genera el código html correspondiente la fila de datos de la tabla
      * estadística.
      * <p>
-     * Dependencias sobre ./css/ubuSisInf.css
-     * 
+     *Dependencias sobre ./css/materialize.min.css y ./css/style.css
+     *
      * @throws SQLException
      */
     private void createGlobalStadisticLine() throws SQLException {
@@ -257,7 +259,7 @@ public class DocHistoric extends DocSistInfHtml {
 
     /**
      * Genera el código correspondiente a la tabla de la pestaña de histórico.
-     * 
+     *
      * @param id
      *            Identificador correspondiente a la gráfica.
      */
@@ -271,7 +273,7 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Método que recoge los datos de la base de datos y los prepara para la
      * creación de la tabla de históricos.
-     * 
+     *
      * @param nTotalProjectNuevos
      *            Proyectos de nueva asignación.
      * @param nTotalProjectViejos
@@ -330,7 +332,7 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Método que recoge los datos de la base de datos y los prepara para la
      * creación de la tabla de históricos.
-     * 
+     *
      * @param nMediaNotas
      *            Media de las notas de los proyectos.
      * @param nMediaMeses
@@ -376,7 +378,7 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Método que calcula la media aritmética del tiempo que llevó terminar el
      * proyecto.
-     * 
+     *
      * @return Una tabla ordenada por cursos con cada media.
      * @throws SQLException
      */
@@ -404,7 +406,7 @@ public class DocHistoric extends DocSistInfHtml {
 
     /**
      * Método que calcula la media aritmética de las notas
-     * 
+     *
      * @return Una tabla ordenada por cursos con cada media.
      * @throws SQLException
      */
@@ -431,7 +433,7 @@ public class DocHistoric extends DocSistInfHtml {
 
     /**
      * Método que calcula el total de alumnos con proyectos asignados.
-     * 
+     *
      * @return Una tabla ordenada por cursos con cada total de alumnos.
      * @throws SQLException
      */
@@ -464,7 +466,7 @@ public class DocHistoric extends DocSistInfHtml {
 
     /**
      * Método que calcula el total de tutores con proyectos asignados.
-     * 
+     *
      * @return Una tabla ordenada por cursos con cada total de tutores.
      * @throws SQLException
      */
@@ -497,7 +499,7 @@ public class DocHistoric extends DocSistInfHtml {
 
     /**
      * Método que ordena y obtiene los proyectos presentados según el curso.
-     * 
+     *
      * @return Una tabla ordenada por cursos con los proyectos presentados.
      * @throws SQLException
      */
@@ -527,7 +529,7 @@ public class DocHistoric extends DocSistInfHtml {
 
     /**
      * Método que recoge los datos para la creación de la tabla de históricos.
-     * 
+     *
      * @return Listado de todos los datos necesarios para la creación de la
      *         tabla.
      * @throws SQLException
@@ -566,7 +568,7 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Método que recoge los datos para la creación de la tabla de históricos de
      * medias.
-     * 
+     *
      * @return Listado de todos los datos necesarios para la creación de la
      *         tabla.
      * @throws SQLException
@@ -598,7 +600,7 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Método que obtiene el curso mínimo o máximo según el booleano que se le
      * pase.
-     * 
+     *
      * @param minimo
      *            booleano que nos dice si será mínimo o máximo.
      * @return la fecha con el curso mínimo o máximo.
@@ -625,7 +627,7 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Método que guarda todas fechas de asignación y presentación ordenadas por
      * curso.
-     * 
+     *
      * @throws SQLException
      */
     private void calcularProyectos() throws SQLException {
@@ -644,7 +646,7 @@ public class DocHistoric extends DocSistInfHtml {
      * curso y si el proyecto se asignado antes de septiembre o después, ya que
      * corresponde a un curso más. La llave es la que define el curso, por
      * ejemplo si la llave es 2003 el curso es 2002-2003.
-     * 
+     *
      * @throws SQLException
      */
     private void prepararProyectos() throws SQLException {
@@ -686,7 +688,7 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Método auxiliar que construye el array para introducir los datos
      * correctamente en el mapa.
-     * 
+     *
      * @param defin
      *            Proyecto actual.
      * @return Devuelve los proyectos en una estructura correcta.
@@ -703,7 +705,7 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Método auxiliar que añade los proyectos a su respectivo curso, teniendo
      * en cuenta la fecha de presentación de este.
-     * 
+     *
      * @param current
      *            Proyecto actual.
      */
@@ -732,7 +734,7 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Método auxiliar que añade los proyectos a su respectivo curso, teniendo
      * en cuenta la fecha de asignación y presentación de este.
-     * 
+     *
      * @param key
      *            Curso actual.
      * @param i
@@ -777,7 +779,7 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Genera el código html correspondiente a una tabla con los proyectos
      * presentados en convocatorias pasadas.
-     * 
+     *
      * @param nProyectPagina
      *            Número de filas visibles por página.
      * @param title
@@ -857,7 +859,7 @@ public class DocHistoric extends DocSistInfHtml {
     /**
      * Genera el código html correspondiente al script de carga del gráfico de
      * históricos.
-     * 
+     *
      * @param datosGraf
      *            Datos a cargar en la gráfica.
      * @param id
@@ -873,7 +875,7 @@ public class DocHistoric extends DocSistInfHtml {
 
     /**
      * Genera la función de carga de las gráficas en el script del head.
-     * 
+     *
      * @param funcion
      *            Nombre de la función del script.
      * @throws SQLException
@@ -891,7 +893,7 @@ public class DocHistoric extends DocSistInfHtml {
 
     /**
      * Getter de los submenús que tiene la página.
-     * 
+     *
      * @return Los submenús de la página.
      */
     public String[] getTitles() {
@@ -900,7 +902,7 @@ public class DocHistoric extends DocSistInfHtml {
 
     /**
      * Setter de los submenús que tiene la página.
-     * 
+     *
      * @param titles
      *            Los títulos de los submenús a cambiar.
      */

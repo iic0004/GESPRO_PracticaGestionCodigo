@@ -22,10 +22,10 @@ import ubu.digit.util.ThresHold;
  * MetricaValores(M0,M1,...) donde M0 y M1 se debe corresponder con las filas
  * del atributo Id .
  * <p>
- * Dependencias sobre recursos web: ./web/css/ubuSisInf.css
- * ./web/js/tip_followscroll.js, ./web/js/wz_tooltip.js
- * ./web/js/tip_centerwindow.js./web/js/googleanalitics.js ./web/js/sorttable.js
- * 
+ * Dependencias sobre recursos web: ./css/materialize.min.css, ./css/style.css,
+ * materialize.min.js, ./web/js/tip_followscroll.js, ./web/js/wz_tooltip.js,
+ * ./web/js/tip_centerwindow.js, ./web/js/googleanalitics.js, ./web/js/sorttable.js.
+ *
  * @author Carlos López Nozal
  * @author Beatriz Zurera Martínez-Acitores
  * @since 0.5
@@ -133,7 +133,7 @@ public class DocMetric extends DocSistInfHtml {
      * MetricaDescripcion. Se inicializan los atributos necesarios que serán
      * utilizados en la consultas posteriores. Permite definir diferentes
      * experimentos combiando unicamente los datos.
-     * 
+     *
      * @throws SQLException
      *             si se no se puede tener acceso al sistema de almacenamiento.
      */
@@ -152,7 +152,7 @@ public class DocMetric extends DocSistInfHtml {
      * de las métricas que tiene el atributo visible=true en la tabla
      * MetricaDescripcion. Se inicializan los atributos necesarios que serán
      * utilizados en la consultas posteriores.
-     * 
+     *
      * @throws SQLException
      *             si se no se puede tener acceso al sistema de almacenamiento.
      */
@@ -194,8 +194,9 @@ public class DocMetric extends DocSistInfHtml {
      * MetricSist.html. Genera el fichero MetricSist.html a partir de los datos
      * en un fichero externo.
      * <p>
-     * Dependencias sobre ./css/ubuSisInf.css, ./js/sorttable.js
-     * 
+     * Dependencias sobre ./css/materialize.min.css, ./css/style.css y
+     * ./js/sorttable.js
+     *
      */
     @Override
     public void generate(int level) throws FileNotFoundException, SQLException {
@@ -239,7 +240,7 @@ public class DocMetric extends DocSistInfHtml {
      * del experimento.
      * <p>
      * Dependencias sobre la tabla: DescripcionExperimento(Descripcion)
-     * 
+     *
      * @throws SQLException
      */
     private void createExperimentDescription(String title) throws SQLException {
@@ -287,7 +288,7 @@ public class DocMetric extends DocSistInfHtml {
      * MetricaDescripcion(Id,Tipo,MinValor,MaxValor,Visible)
      * MetricaValores(M0,M1,...) donde M0 y M1 se debe corresponder con las
      * filas del atributo Id .
-     * 
+     *
      * @param title
      *            título del sub Apartado
      * @throws SQLException
@@ -352,7 +353,7 @@ public class DocMetric extends DocSistInfHtml {
      * colores. Crea un gráfico boxplot. Se valida que el tipo de la descripción
      * de la métrica sea numérico y que exista intervalo recomendado para la
      * métrica.
-     * 
+     *
      * @param i
      *            número de métrica tratada. Necesario para actualizar las
      *            colecciones de datos estadísticos de la UBU.
@@ -477,7 +478,7 @@ public class DocMetric extends DocSistInfHtml {
      * de métricas. Se genera una tabla con los indicadores gráficos de
      * cobertura. Las coleciones de intervalos, de medias aritméticas y medianas
      * deben estar inicializadas y deben contener el mismo número de valores.
-     * 
+     *
      * @param title
      *            título del subapartado
      * @throws SQLException
@@ -551,7 +552,7 @@ public class DocMetric extends DocSistInfHtml {
      * <p>
      * Dependencias sobre las tablas. MetricaValores(M0,M1,...) donde M0 y M1 se
      * debe corresponder con las filas del atributo Id .
-     * 
+     *
      * @param title
      *            título del sub Apartado
      * @throws SQLException
@@ -655,7 +656,7 @@ public class DocMetric extends DocSistInfHtml {
     /**
      * Genera una lista informativa html no numerada con una descripción
      * indicando la leyenda de los colores utilizados.
-     * 
+     *
      * @param description
      *            descripción de los valores representados.
      */
@@ -673,7 +674,7 @@ public class DocMetric extends DocSistInfHtml {
      * corresponde con la concatenación de los datos pasados como parametros. La
      * imagen se genera dinámicamente a partir de la consulta de los datos de la
      * tabla MetricaValores
-     * 
+     *
      * @param id
      *            identificacion de la métrica
      * @param descripcion
@@ -704,7 +705,7 @@ public class DocMetric extends DocSistInfHtml {
     /**
      * Genera un celda de una tabla html cuyo contenido estará en verde si el
      * valor esta dentro del intervalo y rojo en caso contrario.
-     * 
+     *
      * @param data
      *            valor a escribir.
      * @param maxValor
@@ -733,7 +734,7 @@ public class DocMetric extends DocSistInfHtml {
      * Genera un celda de una tabla html cuyo contenido estará en verde si el
      * valor esta dentro del intervalo y rojo en caso contrario. El contenido de
      * la celda esta compuesto por un dato y un string con una imagen.
-     * 
+     *
      * @param data
      *            valor a escribir.
      * @param maxValor
@@ -767,7 +768,7 @@ public class DocMetric extends DocSistInfHtml {
 
     /**
      * Genera una tabla html que representa el indicador gráfico de cobertura.
-     * 
+     *
      * @param nCorrectData
      *            número de datos correctos.
      * @param nTotalData
@@ -796,7 +797,7 @@ public class DocMetric extends DocSistInfHtml {
 
     /**
      * Getter de los submenús que tiene la página.
-     * 
+     *
      * @return Los submenús de la página.
      */
     public String[] getTitles() {
@@ -805,7 +806,7 @@ public class DocMetric extends DocSistInfHtml {
 
     /**
      * Setter de los submenús que tiene la página.
-     * 
+     *
      * @param titles
      *            Los títulos de los submenús a cambiar.
      */
